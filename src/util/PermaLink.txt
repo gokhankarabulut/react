@@ -1,5 +1,5 @@
 GitHub URL:
-https://github.com/hamitmizrak/ibb_react.git
+https://github.com/gokhankarabulut/react.git
 
 -------------------------------------------------
 

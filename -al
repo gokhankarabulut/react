@@ -1,0 +1,511 @@
+[33mcommit 55024eb3c1937a528770f621bcbf2171583c40ad[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Gökhan Karabulut <gokhan karabulut>
+Date:   Mon Jul 31 16:48:15 2023 +0300
+
+    commit 1
+
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 27f4be5..91da2be 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -11,8 +11,11 @@[m
+         "@testing-library/jest-dom": "^5.17.0",[m
+         "@testing-library/react": "^13.4.0",[m
+         "@testing-library/user-event": "^13.5.0",[m
+[32m+[m[32m        "axios": "^1.4.0",[m
+[32m+[m[32m        "i18next": "^21.9.1",[m
+         "react": "^18.2.0",[m
+         "react-dom": "^18.2.0",[m
+[32m+[m[32m        "react-i18next": "11.18.6",[m
+         "react-scripts": "5.0.1",[m
+         "web-vitals": "^2.1.4"[m
+       }[m
+[36m@@ -5292,6 +5295,29 @@[m
+         "node": ">=4"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/axios": {[m
+[32m+[m[32m      "version": "1.4.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/axios/-/axios-1.4.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "follow-redirects": "^1.15.0",[m
+[32m+[m[32m        "form-data": "^4.0.0",[m
+[32m+[m[32m        "proxy-from-env": "^1.1.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/axios/node_modules/form-data": {[m
+[32m+[m[32m      "version": "4.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "asynckit": "^0.4.0",[m
+[32m+[m[32m        "combined-stream": "^1.0.8",[m
+[32m+[m[32m        "mime-types": "^2.1.12"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">= 6"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/axobject-query": {[m
+       "version": "3.2.1",[m
+       "resolved": "https://registry.npmjs.org/axobject-query/-/axobject-query-3.2.1.tgz",[m
+[36m@@ -8992,6 +9018,14 @@[m
+         "node": ">=12"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/html-parse-stringify": {[m
+[32m+[m[32m      "version": "3.0.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "void-elements": "3.1.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/html-webpack-plugin": {[m
+       "version": "5.5.3",[m
+       "resolved": "https://registry.npmjs.org/html-webpack-plugin/-/html-webpack-plugin-5.5.3.tgz",[m
+[36m@@ -9126,6 +9160,28 @@[m
+         "node": ">=10.17.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/i18next": {[m
+[32m+[m[32m      "version": "21.10.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/i18next/-/i18next-21.10.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-YeuIBmFsGjUfO3qBmMOc0rQaun4mIpGKET5WDwvu8lU7gvwpcariZLNtL0Fzj+zazcHUrlXHiptcFhBMFaxzfg==",[m
+[32m+[m[32m      "funding": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m          "type": "individual",[m
+[32m+[m[32m          "url": "https://locize.com"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m          "type": "individual",[m
+[32m+[m[32m          "url": "https://locize.com/i18next.html"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m          "type": "individual",[m
+[32m+[m[32m          "url": "https://www.i18next.com/how-to/faq#i18next-is-awesome.-how-can-i-support-the-project"[m
+[32m+[m[32m        }[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "@babel/runtime": "^7.17.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/iconv-lite": {[m
+       "version": "0.6.3",[m
+       "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz",[m
+[36m@@ -14290,6 +14346,11 @@[m
+         "node": ">= 0.10"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/proxy-from-env": {[m
+[32m+[m[32m      "version": "1.1.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="[m
+[32m+[m[32m    },[m
+     "node_modules/psl": {[m
+       "version": "1.9.0",[m
+       "resolved": "https://registry.npmjs.org/psl/-/psl-1.9.0.tgz",[m
+[36m@@ -14568,6 +14629,27 @@[m
+       "resolved": "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz",[m
+       "integrity": "sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg=="[m
+     },[m
+[32m+[m[32m    "node_modules/react-i18next": {[m
+[32m+[m[32m      "version": "11.18.6",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/react-i18next/-/react-i18next-11.18.6.tgz",[m
+[32m+[m[32m      "integrity": "sha512-yHb2F9BiT0lqoQDt8loZ5gWP331GwctHz9tYQ8A2EIEUu+CcEdjBLQWli1USG3RdWQt3W+jqQLg/d4rrQR96LA==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "@babel/runtime": "^7.14.5",[m
+[32m+[m[32m        "html-parse-stringify": "^3.0.1"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "peerDependencies": {[m
+[32m+[m[32m        "i18next": ">= 19.0.0",[m
+[32m+[m[32m        "react": ">= 16.8.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "peerDependenciesMeta": {[m
+[32m+[m[32m        "react-dom": {[m
+[32m+[m[32m          "optional": true[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "react-native": {[m
+[32m+[m[32m          "optional": true[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/react-is": {[m
+       "version": "17.0.2",[m
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz",[m
+[36m@@ -16632,6 +16714,14 @@[m
+         "node": ">= 0.8"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/void-elements": {[m
+[32m+[m[32m      "version": "3.1.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/void-elements/-/void-elements-3.1.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==",[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=0.10.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/w3c-hr-time": {[m
+       "version": "1.0.2",[m
+       "resolved": "https://registry.npmjs.org/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz",[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex b9b1dd9..158f21f 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -6,8 +6,11 @@[m
+     "@testing-library/jest-dom": "^5.17.0",[m
+     "@testing-library/react": "^13.4.0",[m
+     "@testing-library/user-event": "^13.5.0",[m
+[32m+[m[32m    "axios": "^1.4.0",[m
+[32m+[m[32m    "i18next": "^21.9.1",[m
+     "react": "^18.2.0",[m
+     "react-dom": "^18.2.0",[m
+[32m+[m[32m    "react-i18next": "11.18.6",[m
+     "react-scripts": "5.0.1",[m
+     "web-vitals": "^2.1.4"[m
+   },[m
+[36m@@ -34,5 +37,6 @@[m
+       "last 1 firefox version",[m
+       "last 1 safari version"[m
+     ][m
+[31m-  }[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "proxy": "http://localhost:4444"[m
+ }[m
+[1mdiff --git a/public/index.html b/public/index.html[m
+[1mindex aa069f2..0090946 100644[m
+[1m--- a/public/index.html[m
+[1m+++ b/public/index.html[m
+[36m@@ -1,43 +1,50 @@[m
+ <!DOCTYPE html>[m
+ <html lang="en">[m
+[31m-  <head>[m
+[31m-    <meta charset="utf-8" />[m
+[31m-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />[m
+[31m-    <meta name="viewport" content="width=device-width, initial-scale=1" />[m
+[31m-    <meta name="theme-color" content="#000000" />[m
+[31m-    <meta[m
+[31m-      name="description"[m
+[31m-      content="Web site created using create-react-app"[m
+[31m-    />[m
+[31m-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />[m
+[31m-    <!--[m
+[31m-      manifest.json provides metadata used when your web app is installed on a[m
+[31m-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/[m
+[31m-    -->[m
+[31m-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />[m
+[31m-    <!--[m
+[31m-      Notice the use of %PUBLIC_URL% in the tags above.[m
+[31m-      It will be replaced with the URL of the `public` folder during the build.[m
+[31m-      Only files inside the `public` folder can be referenced from the HTML.[m
+[31m-[m
+[31m-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will[m
+[31m-      work correctly both with client-side routing and a non-root public URL.[m
+[31m-      Learn how to configure a non-root public URL by running `npm run build`.[m
+[31m-    -->[m
+[31m-    <title>React App</title>[m
+[31m-  </head>[m
+[31m-  <body>[m
+[31m-    <noscript>You need to enable JavaScript to run this app.</noscript>[m
+[31m-    <div id="root"></div>[m
+[31m-    <!--[m
+[31m-      This HTML file is a template.[m
+[31m-      If you open it directly in the browser, you will see an empty page.[m
+[31m-[m
+[31m-      You can add webfonts, meta tags, or analytics to this file.[m
+[31m-      The build step will place the bundled scripts into the <body> tag.[m
+[31m-[m
+[31m-      To begin the development, run `npm start` or `yarn start`.[m
+[31m-      To create a production bundle, use `npm run build` or `yarn build`.[m
+[31m-    -->[m
+[31m-  </body>[m
+[32m+[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <!-- for language -->[m
+[32m+[m[32m  <meta charset="utf-8" />[m
+[32m+[m
+[32m+[m[32m  <!-- title -->[m
+[32m+[m[32m  <title>Blog</title>[m
+[32m+[m
+[32m+[m[32m  <!-- favicon icon -->[m
+[32m+[m[32m  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />[m
+[32m+[m
+[32m+[m[32m  <!-- SEO -->[m
+[32m+[m[32m  <meta name="viewport" content="width=device-width, initial-scale=1" />[m
+[32m+[m[32m  <meta name="theme-color" content="#000000" />[m
+[32m+[m[32m  <meta name="description" content="Web site created using create-react-app" />[m
+[32m+[m[32m  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />[m
+[32m+[m[32m  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />[m
+[32m+[m
+[32m+[m[32m  <!-- Bootstrap CSS v5.2.1 -->[m
+[32m+[m[32m  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"[m
+[32m+[m[32m    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">[m
+[32m+[m
+[32m+[m[32m  <!-- font awesome -->[m
+[32m+[m[32m  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"[m
+[32m+[m[32m    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="[m
+[32m+[m[32m    crossorigin="anonymous" referrerpolicy="no-referrer" />[m
+[32m+[m
+[32m+[m[32m  <!-- jquery  -->[m
+[32m+[m[32m  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>[m
+[32m+[m[32m  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>[m
+[32m+[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m  <noscript>You need to enable JavaScript to run this app.</noscript>[m
+[32m+[m[32m  <div id="root"></div>[m
+[32m+[m
+[32m+[m[32m  <!-- Bootstrap JavaScript Libraries -->[m
+[32m+[m[32m  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"[m
+[32m+[m[32m    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">[m
+[32m+[m[32m    </script>[m
+[32m+[m
+[32m+[m[32m  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"[m
+[32m+[m[32m    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">[m
+[32m+[m[32m    </script>[m
+[32m+[m[32m</body>[m
+[32m+[m
+ </html>[m
+[1mdiff --git a/src/App.js b/src/App.js[m
+[1mindex 3784575..81804d9 100644[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@ -15,7 +15,7 @@[m [mfunction App() {[m
+           target="_blank"[m
+           rel="noopener noreferrer"[m
+         >[m
+[31m-          Learn React[m
+[32m+[m[32m          I am Here.[m
+         </a>[m
+       </header>[m
+     </div>[m
+[1mdiff --git a/src/component/Footer.jsx b/src/component/Footer.jsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/component/Header.jsx b/src/component/Header.jsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/component/Main.jsx b/src/component/Main.jsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/component/main.css b/src/component/main.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/component/paragraf.html b/src/component/paragraf.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/services/BackendApiHandle.txt b/src/services/BackendApiHandle.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a9144f8[m
+[1m--- /dev/null[m
+[1m+++ b/src/services/BackendApiHandle.txt[m
+[36m@@ -0,0 +1,72 @@[m
+[32m+[m[32mpublic class BlogApiImpl implements IBlogApi<BlogDto> {[m
+[32m+[m
+[32m+[m[32m    // INJECTION[m
+[32m+[m[32m    private final BlogServicesImpl blogServices;[m
+[32m+[m
+[32m+[m[32m    // ERROR[m
+[32m+[m[32m    private ApiResult apiResult;[m
+[32m+[m
+[32m+[m[32m    /////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m    // ALL CREATE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/speed/10[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @GetMapping("/speed/{data}")[m
+[32m+[m[32m    public ResponseEntity<List<BlogDto>> speedData(@PathVariable(name = "data") Long data) {[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.speedData(data));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // ALL DELETE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/delete/all[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @DeleteMapping("/delete/all")[m
+[32m+[m[32m    public ResponseEntity<String> allDelete() {[m
+[32m+[m[32m        return  ResponseEntity.ok(blogServices.allDelete());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m    // CREATE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/create[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @PostMapping("/create")[m
+[32m+[m[32m    public ResponseEntity<?> blogServiceCreate(@Valid @RequestBody BlogDto blogDto) {[m
+[32m+[m[32m        if(blogDto==null){[m
+[32m+[m[32m            throw new ResourceNotFoundException(" Blog Dto null ");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.blogServiceCreate(blogDto));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // LIST[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/list[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @GetMapping("/list")[m
+[32m+[m[32m    public ResponseEntity<List<BlogDto>> blogServiceList() {[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.blogServiceList());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // FIND BY ID[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/find[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/find/0[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/find/1[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @GetMapping("/find/{id}")[m
+[32m+[m[32m    public ResponseEntity<BlogDto> blogServiceFindById(@PathVariable(name = "id") Long id) {[m
+[32m+[m[32m        // id=0 id=null[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.blogServiceFindById(id));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // DELETE[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @DeleteMapping("/delete/{id}")[m
+[32m+[m[32m    public ResponseEntity<Map<String, Boolean>> blogServiceDeleteId[m
+[32m+[m[32m        (@PathVariable(name = "id") Long id) {[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.blogServiceDeleteId(id));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // UPDATE[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    @PutMapping("/update/{id}")[m
+[32m+[m[32m    public ResponseEntity<BlogDto> blogServiceUpdateId[m
+[32m+[m[32m       (@PathVariable(name = "id") Long id, @Valid @RequestBody BlogDto blogDto) {[m
+[32m+[m[32m        return ResponseEntity.ok(blogServices.blogServiceUpdateId(id,blogDto));[m
+[32m+[m[32m    }[m
+[32m+[m[32m} //end class[m
+[1mdiff --git a/src/services/BlogApi.js b/src/services/BlogApi.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..902381d[m
+[1m--- /dev/null[m
+[1m+++ b/src/services/BlogApi.js[m
+[36m@@ -0,0 +1,62 @@[m
+[32m+[m[32m// Axios[m
+[32m+[m[32mimport axios from "axios";[m
+[32m+[m
+[32m+[m[32m// Persist  URL[m
+[32m+[m[32mconst BLOG_URL = "/blog/api/v1";[m
+[32m+[m
+[32m+[m[32mclass BlogApi {[m
+[32m+[m
+[32m+[m[32m    /////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m    // ALL CREATE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/speed/10[m
+[32m+[m[32m    speedData(data) {[m
+[32m+[m[32m        return axios.get(`${BLOG_URL}/speed/10`);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // ALL DELETE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/delete/all[m
+[32m+[m[32m    allDelete() {[m
+[32m+[m[32m        return axios.delete(`${BLOG_URL}/delete/all`);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m    // CREATE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/create[m
+[32m+[m[32m    // {[m
+[32m+[m[32m    //     "header":"header data",[m
+[32m+[m[32m    //     "content":"content data",[m
+[32m+[m[32m    // }[m
+[32m+[m[32m    blogServiceCreate(blogDto) {[m
+[32m+[m[32m        return axios.post(`${BLOG_URL}/create`, blogDto);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // LIST[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/list[m
+[32m+[m[32m    blogServiceList() {[m
+[32m+[m[32m        return axios.get(`${BLOG_URL}/list`);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // FIND BY ID[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/find/1[m
+[32m+[m[32m    blogServiceFindById(id) {[m
+[32m+[m[32m        return axios.get(`${BLOG_URL}/find/${id}`);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // DELETE[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/delete/1[m
+[32m+[m[32m    blogServiceDeleteId(id) {[m
+[32m+[m[32m        return axios.delete(`${BLOG_URL}/delete/${id}`);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // UPDATE[m
+[32m+[m[32m     // {[m
+[32m+[m[32m    //     "header":"header data",[m
+[32m+[m[32m    //     "content":"content data",[m
+[32m+[m[32m    // }[m
+[32m+[m[32m    // http://localhost:4444/blog/api/v1/update/24[m
+[32m+[m[32m    blogServiceUpdateId(id, blogDto) {[m
+[32m+[m[32m        return axios.put(`${BLOG_URL}/update/${id}`, blogDto);[m
+[32m+[m[32m    }[m
+[32m+[m[32m} //end class[m
+[32m+[m
+[32m+[m[32mexport default new BlogApi();[m
+\ No newline at end of file[m
+[1mdiff --git a/src/util/HomeWork.txt b/src/util/HomeWork.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5fcb4b9[m
+[1m--- /dev/null[m
+[1m+++ b/src/util/HomeWork.txt[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32m// LESSON-1[m[41m [m
+[32m+[m[32mprops < context < redux[m
+[32m+[m[32mBabel nedir ?[m
+[32m+[m[32mReact-Router nedir ?[m
+[32m+[m[32mAxios nedir ?[m
+[32m+[m[32mwebpack nedir ?[m
+[32m+[m[32mtypescript nedir ?[m
+[32m+[m[32mEcmascript nedir  ?[m
+[32m+[m[32minternatialization nedir ?[m
+[32m+[m[32mReact Resuability nedir ?[m
+[32m+[m[32mobject destructing nedir ?[m
+[32m+[m[32mJs class constructor nedir ?[m
+[32m+[m[32mJs class super keyword nedir ?[m
+[32m+[m[32mReact bind ne için kullanıyoruz.?[m
+[32m+[m[32mComponent Did Mount ?[m
+[32m+[m[32mnpm ile yarn arasındaki farklar ? 3318[m
+\ No newline at end of file[m
+[1mdiff --git a/src/util/PermaLink.txt b/src/util/PermaLink.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3378638[m
+[1m--- /dev/null[m
+[1m+++ b/src/util/PermaLink.txt[m
+[36m@@ -0,0 +1,36 @@[m
+[32m+[m[32mGitHub URL:[m
+[32m+[m[32mhttps://github.com/hamitmizrak/ibb_react.git[m
+[32m+[m
+[32m+[m[32m-------------------------------------------------[m
+[32m+[m
+[32m+[m[32mBackend URL:[m[41m [m
+[32m+[m[32mhttp://localhost:4444/[m
+[32m+[m[32mhttp://localhost:4444/swagger-ui/index.html[m
+[32m+[m[32mhttp://localhost:4444/h2-console[m
+[32m+[m
+[32m+[m[32m-------------------------------------------------[m
+[32m+[m
+[32m+[m[32mFrontend URL:[m[41m [m
+[32m+[m[32mhttp://localhost:3000/[m
+[32m+[m
+[32m+[m[32m-------------------------------------------------[m
+[32m+[m
+[32m+[m[32mJSX TO Html[m[41m [m
+[32m+[m[32mhttps://transform.tools/html-to-jsx[m
+[32m+[m
+[32m+[m[32m-------------------------------------------------[m
+[32m+[m
+[32m+[m[32mNPM[m[41m [m
+[32m+[m[32mnpm install axios --save[m
+[32m+[m[32mnpm i react-router-dom --save[m
+[32m+[m
+[32m+[m[32m-------------------------------------------------[m
+[32m+[m[32mpackage.json[m
+[32m+[m[32m "axios": "^1.4.0",[m
+[32m+[m[32m    "i18next": "^21.9.1",[m
+[32m+[m[32m    "react": "^18.2.0",[m
+[32m+[m[32m    "react-dom": "^18.2.0",[m
+[32m+[m[32m    "react-i18next": "^11.18.6",[m
+[32m+[m[32m    "react-router-dom": "^6.14.2",[m
+[32m+[m[32m    "react-scripts": "5.0.1",[m
+[32m+[m[32m    "web-vitals": "^2.1.4"[m
+\ No newline at end of file[m
